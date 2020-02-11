@@ -196,6 +196,34 @@ body {
             });
                 
         </script>
+
+<script>
+
+  function autoWidth() {
+         var docEle = document.documentElement,
+             initWidth = 375, initSize = 100,
+             resizeEvent = 'orientationchange' in window ?'orientationchange' : 'resize';
+
+         var container = document.getElementById('container');
+
+         function init(win) {
+           var w = win.innerWidth,
+               h = win.innerHeight;
+
+           docEle.style.fontSize = w / initWidth * initSize + 'px';
+           container.style.height = h + 'px';
+         }
+
+         window.addEventListener(resizeEvent, function(e) {
+           init(window);
+         }, false);
+
+         init(window);
+     }
+
+     autoWidth();
+
+</script>
     </div>
 
     <div class="card">
