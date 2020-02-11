@@ -1,7 +1,303 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="utf-8">
+<title>I SPACE - 意味は自分の空間、自分の部屋</title>
+<script src="jquery-1.11.1.min.js"></script>
+<script src="unslider.min.js"></script>
+<style>
+
+ul, ol { 
+    padding: 0;
+}
+
+.banner { 
+    position: relative; 
+    overflow: auto; 
+    text-align: center;
+    margin:0 auto
+}
+
+.banner li { 
+    list-style: none; 
+}
+
+.banner ul li { 
+    float: left; 
+}
+
+#b04 { 
+    width: 640px;
+}
+
+#b04 .dots { 
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    bottom: 20px;
+}
+
+#b04 .dots li 
+{ 
+    display: inline-block; 
+    width: 10px; 
+    height: 10px; 
+    margin: 0 4px; 
+    text-indent: -999em; 
+    border: 2px solid #fff; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    opacity: .4; 
+    -webkit-transition: background .5s, opacity .5s; 
+    -moz-transition: background .5s, opacity .5s; 
+    transition: background .5s, opacity .5s;
+}
+#b04 .dots li.active 
+{
+    background: #fff;
+    opacity: 1;
+}
+#b04 .arrow { position: absolute; top: 200px;}
+#b04 #al { left: 15px;}
+#b04 #ar { right: 15px;}
+
+/* Make the image fully responsive */
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: Arial;
+  padding: 10px;
+}
+ 
+/* 头部标题 */
+.header {
+  text-align: center;
+}
+ 
+.header h1 {
+  font-size: 50px;
+}
+ 
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+ 
+/* 导航条链接 */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ 
+/* 链接颜色修改 */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+ 
+/* 图像部分 */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+ 
+/* 文章卡片效果 */
+.card {
+  padding: 20px;
+  margin-top: 20px;
+}
+ 
+/* 列后面清除浮动 */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+ 
+/* 底部 */
+.footer {
+  text-align: center;
+}
+ 
+</style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+<div class="header">
+  <h1>I SPACE</h1>
+  <img src="logo.jpg" style="height:300px;" >
+  
+</div>
+
+<div class="topnav">
+  <a href="#">ホーム</a>
+  <a href="#">エイジング塗装</a>
+  <a href="#">壁画</a>
+  <a href="#">看板と家具</a>
+  <a href="#">アンティーク</a>
+  <a href="#">スタッフ</a>
+  <a href="#" style="float:right">会社概要</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn" style="text-align:center;">
+
+    <div class="card">
+        <h2>I SPACE</h2>
+        <h3>Impressive space</h3>
+        <p>会社名: I SPACE</p>
+        <p>意味は自分の空間、自分の部屋</p>
+        <p>「壁画で、部屋の第一印象が変わります」</p>
+        <p>「ストーリーのある空間つくり」</p>
+
+        <!-- <p><img src="6.jpg" style="height: 300px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="7.jpg" style="height: 300px;"></p></br>
+        <img src="8.jpg" style="height: 300px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="9.jpg" style="height: 300px;"> -->
+
+        </br></br>
+        <div class="banner" id="b04">
+            <ul>
+                <li><img src="7.jpg" alt="" height="800px" ></li>
+                <li><img src="8.jpg" alt="" height="800px" ></li>
+                <li><img src="9.jpg" alt="" height="800px" ></li>
+                <li><img src="6.jpg" alt="" height="800px" ></li>
+                <li><img src="1.jpg" alt="" height="800px" ></li>
+            </ul>
+            <a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="arrowl.png" alt="prev" width="20" height="35"></a>
+            <a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="arrowr.png" alt="next" width="20" height="35"></a>
+        </div>
+
+        <script>
+
+            $(document).ready(function(e) {
+                var unslider04 = $('#b04').unslider({
+                    dots: true
+                }),
+                data04 = unslider04.data('unslider');
+                
+                $('.unslider-arrow04').click(function() {
+                    var fn = this.className.split(' ')[1];
+                    data04[fn]();
+                });
+            });
+                
+        </script>
+    </div>
+
+    <div class="card">
+      <h2>壁画 とは：</h2>
+      <p>   壁画は、ときめきやワクワク感、いきいきとした生命力、ユーモアや遊び心、明るさや賑わい感、</p>
+      <p>   癒やしや温もり感など人々に感動をもたらしたり、ドラマティックな空間に誘ってくれます。</p>
+      <p>   人は、いつも「非日常的な異空間」を求めて集まってきます。</p>
+      <p>   人は、いつも外見イメージで選びます。</p>
+      <p>   選ばれる外見をつくることは、集客の第一歩です。</p>
+      <p>   それを実現するのに、「壁画」は最も効果的でコストパフォーマンスに優れた手法といえます。</p>
+    </div>
+
+    <div class="card">
+      <h2>ブランディング：</h2>
+      <p>   壁絵専門店として、重要なサービスは店舗を間に合わず屋内外に制作、
+      <p>   壁に絵を描く、壁紙を貼ってはなくて、手を直に描くです。
+      <p>   お客様に「非日常的な異空間を与えます。
+      <p>   建物でも、空間でも、部屋でもある世界観があるの感じをも</p>
+      <p>   った特別な空間に生れ変るということになります。</p>
+      <p>   壁絵のある空間にいれることで、</p>
+      <p>   えたりすることができるのが当店の目指す效果です。</p>
+      <p>   描きたい絵を持って人でも、デザインが始まると人でも、</p>
+      <p>   そして絵の描くごとに特別な要求を持っている人も、</p>
+      <p>   素早い対応する出来ます。</p>
+    </div>
+
+    <div class="card">
+            <h2>コンセプト：</h2>
+            <p>   オリジナル独自空間を作り、もっと面白く楽しい雰囲気にしたい、
+            <p>   部屋を自分らしい特別なイメージ空間にしたい、入り安い、</p>
+            <p>   親しみ感のある外觀イメージにしたい。</p>
+            <p>   人の気分を高めパフォーマンスを上げる、</p>
+            <p>   エンターテイメントな空間。</p>
+              
+        </br></br>
+
+            <h2>サービス：</h2>
+            <p>   画師手描き特別な質感の壁画を描きます、</p>
+            <p>   壁紙とクロスなど違うな雰囲気と芸術的な壁画を作るサービスを提供します。</p>
+            <p>   特に感動空間、ストーリーがある空間を表現する。</p>
+            
+        </br></br>
+
+            <h2>ターゲット：</h2>
+            <p>   自分の好きな特別空間が作りたい人</p>
+          </div>
+
+        </br></br></br></br></br></br>
+
+          <h1>PORTFOLIO</h1></br>
+          <p><img src="2.jpg" style="height: 300px;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="3.jpg" style="height: 300px;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="4.jpg" style="height: 300px;"></p>
+
+        </br></br></br></br></br></br>
+
+          <h1>FEATURED</h1></br>
+          <p><img src="13.png" style="height: 300px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="14.png" style="height: 300px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="15.png" style="height: 300px;"></p>
+
+        </br></br></br></br></br></br>
+
+          <h1>STAFF</h1></br>
+          <p><img src="16.jpg" style="height: 300px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="17.jpg" style="height: 300px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="18.jpg" style="height: 300px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="19.jpg" style="height: 300px;"></p>
+
+        </br></br></br></br></br></br>
+
+          <h2>キワ・エンジニアリングはリアリティーを追及します</h2>
+          <p>   過度な演出はせず、その時、その場にマッチングした</p>
+          <p>   エイジング・壁画・家具・看板・什器を制作します。</p>
+          <p>   施工のご相談、見積り等、お気軽にお問合せ下さい。</p>
+
+        </br></br>
+
+        <div style="background: rgba(238, 238, 238, 0.692);">
+            <h1>お問合せ・お見積り</h2>
+            <p>   お電話　9:00 - 18:00 (平日)</p>
+            <p>   0120-209-426</p>
+            </br>
+            <p><img src="10.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="11.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="12.gif"></p>
+        </div>
+
+  </div>
+
+<div class="footer" style="background: rgb(0, 0, 0);">
+    </br></br></br></br>
+  <h2 style="color: white;">ALL RIGHTS RESERVED by I SPACE CO,LTD..</h2>
+</br></br></br></br>
+</div>
+
 </body>
 </html>
